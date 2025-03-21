@@ -1,17 +1,16 @@
-🔹 MCU Used: STM32
+# LED Blink (STM32)
 
-🔹 IDE: STM32CubeIDE
+Basic LED blink using GPIO + HAL.
 
-🔹 Clock Configuration: Default
+- MCU: STM32  
+- IDE: STM32CubeIDE  
+- Clock: Default  
+- Peripherals: GPIO
 
-🔹 Peripherals: GPIO
+---
 
+###  Graph  
+![Graph](ASSETS/Graph_Toggle_LED.jpeg)
 
-
-
-LED BLINKING:
-
-![Graph](assets/Graph_Toggle_LED.jpeg)
-
-
-![LED Test](assets/LED_TEST_GIF.gif)
+###  Demo  
+![LED Test](ASSETS/LED_TEST_GIF.gif)
