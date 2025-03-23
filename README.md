@@ -105,3 +105,65 @@ As you can see, the TRIG (orange signal) is sent and kept HIGH for 10 µs. If th
 ### 🎬 Demo  
 ![HIGHGRAPH](ASSETS/DISTANCE_TEST_GIF.gif)
 
+
+##  PWM-Control Motors
+
+Basic PWM to run motors, speed and directions.
+
+
+I used L298N for controlling the motors, changing directions.
+### 🧰 Schematic  
+![LED Test](ASSETS/L298N.png)
+
+---
+### How does it work?
+
+You have 4 pins:
+
+- **Vcc(12V+)** – I used 5v because i don t have another power source, that s why i used only 1 motor.
+- **GND** – Ground  
+- **+5V** – Watch out, this is an output voltage, do not connect this to your board, it will probably fry it...
+> Check Diagram above for more information  
+- **ENA** – Here you enter the analog signal, i will go in detail below.
+- **IN1** - First pin that will change direction, set it to **HIGH** -- forward
+- **IN2** - Second pin, set it to **HIGH** -- backwards
+> WATCH OUT! Don't set IN1 and IN2 HIGH at the same time, i don t know what will happen, ONLY 1 of them needs to be HIGH;
+
+**IN1** and **IN2** in the L298N use a H Bridge, thats why you can change the direction of the current flow to reverse the motors.
+
+### Implementation
+ ---
+
+Well, a PWM(Pulse Width Modulation) is basically a way to control the output voltage by turning off/on the signal(creating a rectangular wave).
+
+#### WaveForm
+![Duty](ASSETS/duty_cycle.png)
+The duty cycle is how much the signal to be high in a frequency period(T), for example if you have 10V, and want to output 1V, you use 10% duty cycle.
+
+
+While you may be asking **if i turn the signal off shouldn't the (whatever your using... motor/led, etc..) turn off also?**.
+
+
+That s what i thought at first but apparently the asnwer is **NOPE**,  because it can’t react fast enough to the on/off transitions, it behaves as if it's receiving a smoother signal (inertia + inductance of the motor help with that).
+
+For this motor control implementation, i've used this parameter:
+- **PWM frequency** - 20 **kHz**
+
+
+Why?? Well because
+ - **High frequency** = smoother power(not more __power__ or __torque__)
+
+ - **ON/OFF** happens so fast, the motor's inductance smooths out
+
+ - **Motor** receives a more stable __current__
+
+ - **It feels like it's more powerful**, but really, its just more consistent
+
+ And with frequencies above **20 kHz**, human ears can t hear the buzzing noise the motor makes :)
+
+
+
+### 🎬 Demo  
+![Button-Le](ASSETS/PWM_TEST_GIF.gif)
+
+---
