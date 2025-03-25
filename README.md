@@ -167,3 +167,31 @@ Why?? Well because
 ![Button-Le](ASSETS/PWM_TEST_GIF.gif)
 
 ---
+
+
+##  PWM-SERVO
+
+Basic PWM to change the servo arm position.
+
+![Graph](ASSETS/Servo_Timing.png)
+
+
+---
+### How does it work?
+
+You have 3 pins:
+
+- **Vcc(5+)** – you can power it from the board
+- **GND** – Ground  
+- **PWM** – The signal where you provide the pwm
+
+Bassicaly the duty cycle provides the position, trough testing here are the positions:
+
+- **50 ms or 2.5% DutyCycle** - 0 degrees
+- **125 ms or 6.25% DutyCycle** - 90 degrres
+- **200 ms or 10% DutyCycle** - 1280 degrees
+
+> Of course you can have intermediate angles, this is just refrence...
+
+### 🎬 Demo  
+![Graph](ASSETS/SERVO_TEST_GIF.gif)
