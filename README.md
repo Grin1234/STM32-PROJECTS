@@ -138,6 +138,8 @@ Well, a PWM(Pulse Width Modulation) is basically a way to control the output vol
 
 #### WaveForm
 ![Duty](ASSETS/duty_cycle.png)
+
+
 The duty cycle is how much the signal to be high in a frequency period(T), for example if you have 10V, and want to output 1V, you use 10% duty cycle.
 
 
@@ -187,11 +189,13 @@ You have 3 pins:
 
 Bassicaly the duty cycle provides the position, trough testing here are the positions:
 
-- **50 ms or 2.5% DutyCycle** - 0 degrees
-- **125 ms or 6.25% DutyCycle** - 90 degrres
-- **200 ms or 10% DutyCycle** - 1280 degrees
+- **0.5 ms or 2.5% DutyCycle** - 0 degrees
+- **1.25 ms or 6.25% DutyCycle** - 90 degrres
+- **2 ms or 10% DutyCycle** - 180 degrees
 
-> Of course you can have intermediate angles, this is just refrence...
+> Considering you use a 50 Hz signal.
+
+> Of course you can have intermediate angles, this is just reference...
 
 ### 🎬 Demo  
 ![Graph](ASSETS/SERVO_TEST_GIF.gif)
